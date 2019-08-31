@@ -19,7 +19,7 @@ public class A1Novice {
 		String Finitial;
 		String itemName;
 		int numItems;
-		int multItems;
+		double multItems;
 		double price;
 		double sum = 0;
 		double previous = 0;
@@ -36,26 +36,27 @@ public class A1Novice {
 			String[] total = new String [numItems];
 			//for loop to get sum of items and print
 			for (int n = 0; n < numItems; n++) {
+				if(n == 0) {
+					previous = 0;
+				}
 				multItems = scan.nextInt();
 				itemName = scan.next();
 				price = scan.nextDouble();
 				//calculate sum
-				sum = (multItems * price);
-				
+				sum = multItems*price;
 				Ssum = (previous + sum);
-				
-	
-				previous = sum;
-	
+				previous = Ssum;
 				
 				String Final = String.format("%.2f", Ssum);
 				
 				//get the total to send to the receipt to print.
 				total[n] = Final;
+				
+				
 				}
 			
 		
-			receipt[i] = Finitial + " " + Lname + " " + total[numItems-1];
+			receipt[i] = Finitial + " " + Lname + ": " + total[numItems-1];
 			
 		}
 		for (int i = 0; i < numCustomers; i++) {
