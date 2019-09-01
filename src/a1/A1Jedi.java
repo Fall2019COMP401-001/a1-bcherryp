@@ -35,9 +35,9 @@ public class A1Jedi {
 			//scanning last remaining items and adding to tester for number of items
 			for (int c = 0; c < count; c++) {
 				int multItems = scan.nextInt();
-				String testName = scan.next();
+				String itemforTest = scan.next();
 				for (int n = 0; n < item.length; n++) {
-					if (testName.equalsIgnoreCase(item[n])) {
+					if (itemforTest.equalsIgnoreCase(item[n])) {
 						numItems[n] += multItems;
 						tester[n]++;
 					}
