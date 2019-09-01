@@ -44,10 +44,10 @@ public class A1Jedi {
 				}
 			}
 		}
-		//close scanner
-		scan.close();
+		//close scanner since scanning is done scanning all the scans.
+			scan.close();
 		
-		//for and if/else loop to print out the number and name of items
+		//for and if/else loop to print out the number and name of items.
 		for (int i = 0; i < numItems.length; i++) {
 			if (tester[i] == 0) {
 				System.out.println("No customers bought " + item[i]);
