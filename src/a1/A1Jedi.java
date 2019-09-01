@@ -24,11 +24,12 @@ public class A1Jedi {
 		/*establishing second set of variables for second set of data and 
 		again not keeping data that isnt needed for output*/
 		int[] numCust = new int [scan.nextInt()];
+		String[] Fname = new String [item.length];
 		
 		//for loop, ignoring most of the scanned objects by not saving in array
 		// but this should scan what we want and keep track of how many are bought
 		for (int i = 0; i < numCust.length; i++) {
-			String Fname = scan.next();
+			Fname[i] = scan.next();
 			String Lname = scan.next();
 			int count = scan.nextInt();
 			
@@ -39,7 +40,9 @@ public class A1Jedi {
 				for (int n = 0; n < item.length; n++) {
 					if (itemforTest.equalsIgnoreCase(item[n])) {
 						numItems[n] += multItems;
+						if (Fname[c] != Fname[i] || n == 3 || c == 2) {
 						tester[n]++;
+						}
 					}
 				}
 			}
