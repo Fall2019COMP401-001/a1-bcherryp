@@ -24,12 +24,22 @@ public class A1Jedi {
 		/*establishing second set of variables for second set of data and 
 		again not keeping data that isnt needed for output*/
 		int[] numCust = new int [scan.nextInt()];
-		String[] Fname = new String [item.length];
+
 		
 		//for loop, ignoring most of the scanned objects by not saving in array
 		// but this should scan what we want and keep track of how many are bought
 		for (int i = 0; i < numCust.length; i++) {
-			Fname[i] = scan.next();
+			
+			//trying to use a boolean to keep track of customers as suggested in my PIAZZA question
+			
+			boolean[] isBought = new boolean [numItems.length];
+			
+			//for loop to reset boolean for each user because otherwise it stays true.
+			for (int j = 0; j < isBought.length; j++) {
+				isBought[j] = false;
+			}
+			
+			String Fname = scan.next();
 			String Lname = scan.next();
 			int count = scan.nextInt();
 			
@@ -40,7 +50,11 @@ public class A1Jedi {
 				for (int n = 0; n < item.length; n++) {
 					if (itemforTest.equalsIgnoreCase(item[n])) {
 						numItems[n] += multItems;
-						tester[n]++;
+						//2 if loops to try to implement boolean as suggested from Piazza
+						if (!isBought[n]) {
+							isBought[n] = true;
+							tester[n]++;
+						}	
 					}
 				}
 			}
