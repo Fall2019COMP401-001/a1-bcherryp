@@ -40,9 +40,7 @@ public class A1Jedi {
 				for (int n = 0; n < item.length; n++) {
 					if (itemforTest.equalsIgnoreCase(item[n])) {
 						numItems[n] += multItems;
-						if (Fname[c] != Fname[i] || n == 3 || c == 2) {
 						tester[n]++;
-						}
 					}
 				}
 			}
