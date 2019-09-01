@@ -13,7 +13,7 @@ public class A1Novice {
 		//get count of number of inputs
 		int numCustomers = scan.nextInt();
 		
-		//list of objects and values I will need
+		//list of objects and values I will use
 		String Fname;
 		String Lname;
 		String Finitial;
@@ -24,6 +24,7 @@ public class A1Novice {
 		double sum = 0;
 		double previous = 0;
 		double Ssum;
+		
 		String[] receipt = new String[numCustomers];
 		
 		//for loop to step through scanner inputs
@@ -32,33 +33,38 @@ public class A1Novice {
 			Finitial = Fname.substring(0, 1) + ".";
 			Lname = scan.next();
 			numItems = scan.nextInt();
+			
 			//String to keep track of the totals
 			String[] total = new String [numItems];
+			
 			//for loop to get sum of items and print
-			for (int n = 0; n < numItems; n++) {
+		for (int n = 0; n < numItems; n++) {
 				if(n == 0) {
 					previous = 0;
 				}
-				multItems = scan.nextInt();
-				itemName = scan.next();
-				price = scan.nextDouble();
+					multItems = scan.nextInt();
+					itemName = scan.next();
+					price = scan.nextDouble();
+					
 				//calculate sum
-				sum = multItems*price;
-				Ssum = (previous + sum);
-				previous = Ssum;
+					sum = multItems*price;
+					Ssum = (previous + sum);
+					previous = Ssum;
 				
-				String Final = String.format("%.2f", Ssum);
+					String Final = String.format("%.2f", Ssum);
 				
 				//get the total to send to the receipt to print.
-				total[n] = Final;
+					total[n] = Final;
 				
 				
-				}
+			}
 			
 		
-			receipt[i] = Finitial + " " + Lname + ": " + total[numItems-1];
+		receipt[i] = Finitial + " " + Lname + ": " + total[numItems-1];
 			
 		}
+		
+		//print out the lines by going through array
 		for (int i = 0; i < numCustomers; i++) {
 			
 			System.out.println(receipt[i]);
